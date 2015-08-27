@@ -107,7 +107,7 @@
               	</div>
               	<div class="form-group">
                 	<div align="center">                                             
-                    	<button type="submit" class="btn btn-primary">ok</button>
+                    	<button type="submit" class="btn btn-primary">OK</button>
                     </div>
                 </div>                
               </form>
