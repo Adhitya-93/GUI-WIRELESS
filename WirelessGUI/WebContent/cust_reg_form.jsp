@@ -23,8 +23,8 @@
 <!-- Custom styles -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
-
-
+<script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="js/profile.js" type="text/javascript"></script>
 <script src="form1_validate.js" type="text/javascript"></script>
 
 </head>
@@ -40,8 +40,8 @@
 			</div>
 
 			<!--logo start-->
-			<a href="index.html" class="logo"> <span class="lite"><img
-					alt="" src="img/t15.jpg"></span></a>
+			<a href="index.jsp" class="logo"> <span class="lite"><img
+					alt="" src="img/t15.png"></span></a>
 			<!--logo end-->
 			<div class="top-nav notification-row">
 				<br>
@@ -75,8 +75,8 @@
 						<i class="fa fa-files-o"></i> Customer Details
 					</h3>
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-						<li><i class="icon_document_alt"></i><a href="blank.html">plans</a></li>
+						<li><i class="fa fa-home"></i><a href="index.jsp">Home</a></li>
+						<li><i class="icon_document_alt"></i><a href="plans.jsp">plans</a></li>
 						<li><i class="fa fa-files-o"></i>Customer Details</li>
 					</ol>
 				</div>
@@ -90,13 +90,24 @@
 								<form class="form-validate form-horizontal " name="registration"
 									id="register_form" method="get" action="">
 									<div class="form-group ">
+										<label for="email" class="control-label col-lg-2">Email
+											<span class="required">*</span>
+										</label>
+										<div class="col-lg-10">
+											<input class="form-control " id="email" name="email"
+												type="email" value="<%String email= session.getAttribute("mail").toString();out.println(email);%>"></input>												
+										</div>
+									</div>
+									<div class="form-group ">
 										<label for="firstname" class="control-label col-lg-2">First
 											name <span class="required">*</span>
 										</label>
 										<div class="col-lg-10">
 											<input class=" form-control" id="firstname" name="firstname"
 												type="text" />
+												
 										</div>
+																				
 									</div>
 									<div class="form-group ">
 										<label for="lastname" class="control-label col-lg-2">Last
@@ -142,16 +153,7 @@
 											<input class=" form-control" id="country" name="country"
 												type="text" value="United States of America" readonly />
 										</div>
-									</div>
-									<div class="form-group ">
-										<label for="email" class="control-label col-lg-2">Email
-											<span class="required">*</span>
-										</label>
-										<div class="col-lg-10">
-											<input class="form-control " id="email" name="email"
-												type="email" />
-										</div>
-									</div>
+									</div>									
 									<div class="form-group ">
 										<label for="dob" class="control-label col-lg-2">Date
 											of Birth <span class="required">*</span>
@@ -219,7 +221,9 @@
 	<!-- nice scroll -->
 	<script src="js/jquery.scrollTo.min.js"></script>
 	<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-
+	<script>
+	document.getElementById("email").value.innerHTML = localStorage.getItem('email');;	
+	</script>
 
 
 

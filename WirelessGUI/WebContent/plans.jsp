@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<meta charset="utf-8">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Twenty Fifteen">
     <meta name="author" content="GeeksLabs">
@@ -29,8 +30,37 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
+    <style>
+    span.tab{
+    padding: 0 6%; /* Or desired space*/
+}
+</style>
+ <script src="js/pcatjson.js"></script>
+    <script type="text/javascript">
+
+    
+   
+    
+  /* function step1()
+   {
+   document.getElementById("framework").innerHTML="";
+   document.getElementById("framework").innerHTML=document.getElementById("step-1").innerHTML;
+   }
+   function step2()
+   {
+    document.getElementById("framework").innerHTML="";
+   document.getElementById("framework").innerHTML=document.getElementById("step-2").innerHTML;
+   }
+   function step3()
+   {
+    document.getElementById("framework").innerHTML="";
+   document.getElementById("framework").innerHTML=document.getElementById("step-3").innerHTML;
+   }*/
+    
+</script>
   </head>
-<body>
+
+  <body>
   <!-- container section start -->
   <section id="container" class="">
       <!--header start-->
@@ -43,21 +73,21 @@
             <!--logo start-->
             <a href="index.jsp" class="logo"> <span class="lite"><img alt="" src="img/t15.png"></span></a>
             <!--logo end-->
-            		   <div class="top-nav notification-row"><br>
+       <div class="top-nav notification-row">             
                     <!-- user login dropdown start-->
-                    <li class="dropdown">
+                    <br><li class="dropdown">
+                    
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username"><% String firstName= session.getAttribute("rep_username").toString();
-     out.println(firstName);%></span>
-                            <b class="caret"></b>
+                             <span class="username"><% String firstName= session.getAttribute("rep_username").toString();
+     out.println(firstName);%></span> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
                             <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                                <a href="profile.html"><i class="icon_profile"></i> My Profile</a>
                             </li>
                             <li>
                                 <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
@@ -68,7 +98,7 @@
                 </ul>
                 <!-- notificatoin dropdown end-->
             </div>
-      </header>      
+      </header>   
       <!--header end-->
       <!--main content start-->
           <section class="wrapper">
@@ -77,13 +107,66 @@
 					<h3 class="page-header"><i class="fa fa fa-bars"></i> Plans</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.jsp">Home</a></li>
-						<li><i class="fa fa-square-o"></i>Plan selection page</li>
+						<li><i class="fa fa-square-o"><a href="order_type.jsp"></i>Order Selection</a></li>
+            <li><i class="fa fa-circle-o"></i>Plan selection page</li>
 					</ol>
 				</div>
 			</div>
-              <!-- page start-->
-              Page content goes here
-              <!-- page end-->
+              <div id="wizard" class="swMain">
+                <br>
+                <br>
+                <span class="tab"></span>
+                <center>
+            <form id="planform">
+            <%String value=(String)session.getAttribute("location");  %>
+            
+     <a href="#step-1" onclick="withequip('<%=value%>')" id="plan_equip" name="plan_equip">
+            <img src="img/equip.png" onmouseover="this.src='img/equipclick.png'" onmouseout="this.src='img/equip.png'" width="250px" height="110px" hspace="20"/>
+        </a>
+        <span class="tab"></span>
+      <a href="#step-2" onclick="individual_plan('<%=value%>')" id="indi_plan" name="indi_plan">
+            <img src="img/ind.png" onmouseover="this.src='img/indclick.png'" onmouseout="this.src='img/ind.png'" width="250px" height="110px" />
+        </a>
+        <span class="tab"></span>
+      <a href="#step-3" onclick="group_plan('<%=value%>')" id="grp_plan" name="grp_plan">
+            <img src="img/group.png" onmouseover="this.src='img/groupclick.png'" onmouseout="this.src='img/group.png'" width="250px" height="110px" hspace="20"/>
+         </a>
+         </form>
+         </center>
+    <div id="framework">
+    <script>
+    document.getElementById("framework").innerHTML='<center><object height="700" width="1300" type="text/html" ></object></center>';
+    </script>
+  </div>
+    <div id="step-1" style="display:none;" name="abcd"> 
+        <h2 class="StepTitle">Step 1</h2>
+        <table cellspacing="3" cellpadding="3" align="center">
+            <tr>
+                  <td align="center" colspan="3">&nbsp;</td>
+            </tr>        
+                                                      
+       </table>               
+    </div>
+     <div id="step-2" style="display: none;" name="abcd"> 
+        <h2 class="StepTitle">Step 2</h2>
+        <table cellspacing="3" cellpadding="3" align="center">
+            <tr>
+                  <td align="center" colspan="3">&nbsp;</td>
+            </tr>        
+                                                  
+       </table>               
+    </div>
+    <div id="step-3" style="display: none;" name="abcd"> 
+        <h2 class="StepTitle">Step 3</h2>
+        <table cellspacing="3" cellpadding="3" align="center">
+            <tr>
+                  <td align="center" colspan="3">&nbsp;</td>
+            </tr>        
+                                                  
+       </table>               
+    </div>
+
+  
       </section>
       <!--main content end-->
   </section>

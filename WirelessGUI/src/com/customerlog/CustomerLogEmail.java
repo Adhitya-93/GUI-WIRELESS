@@ -1,6 +1,7 @@
 package com.customerlog;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,8 +35,44 @@ public class CustomerLogEmail extends HttpServlet {
 			System.out.println(mail);
 			String location=request.getParameter("location");
 			
+			String custID=request.getParameter("custID"); 
+			int cID=Integer.parseInt(custID);
+			PrintWriter out= response.getWriter();
+			if (mail== null) 
+		    {
+		    	response.sendRedirect("index.jsp");
+		    	 out.println("<html><body onload=\"alert('EMAIL SHOULD NOT BE EMPTY')\"></body></html>");
+
+		    }
+			
+			else if (mail.indexOf("@", 0) < 0)
+		    {
+		        response.sendRedirect("index.jsp");
+		        out.println("<html><body onload=\"alert('GIVE MAIL PROPERLY')\"></body></html>");
+
+
+		    }
+			else if (mail.indexOf(".", 0) < 0)
+		    {
+		        response.sendRedirect("index.jsp");
+		        out.println("<html><body onload=\"alert('GIVE MAIL PROPERLY')\"></body></html>");
+
+		    }
+			else if(cID<=1000000 || cID>=9999999)
+			{
+				response.sendRedirect("index.jsp");
+		        out.println("<html><body onload=\"alert('GIVE customer ID PROPERLY')\"></body></html>");
+			}
+			else if(location.equalsIgnoreCase("select")){
+		        response.sendRedirect("index.jsp");
+		        out.println("<html><body onload=\"alert('GIVE LOCATION')\"></body></html>");
+
+		    }
+		    else{
+			
 			HttpSession session=request.getSession();  
         	session.setAttribute("mail",mail);
+        	session.setAttribute("location", location);
 	
 
     		boolean status=new CustomerDao().CustLog(mail,location);
@@ -47,15 +84,12 @@ public class CustomerLogEmail extends HttpServlet {
 			}
 			else
 				System.out.println("not updated");
-			
-		
-			
+		    }
 		} catch (Exception e) {
 		e.printStackTrace();
 	}
 
 }
 	
-	}
 
-
+}

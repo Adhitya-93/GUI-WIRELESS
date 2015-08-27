@@ -21,7 +21,7 @@ public class rep_login extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 HttpSession session; 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		PrintWriter out=response.getWriter();
 		
@@ -55,6 +55,7 @@ HttpSession session;
 		else{
 			System.out.print("wrong credentials");
 			response.setContentType("text/html"); 
+			System.out.println("abcd");
 			ServletContext context=getServletContext();
 			RequestDispatcher rd=context.getRequestDispatcher("/loginerror.html");  
 		    rd.forward(request, response);  

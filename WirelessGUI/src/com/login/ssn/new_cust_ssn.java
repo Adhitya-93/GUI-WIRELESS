@@ -98,7 +98,7 @@ HttpSession session;
 			System.out.print("wrong credentials");
 			response.setContentType("text/html"); 
 			ServletContext context=getServletContext();
-			RequestDispatcher rd=context.getRequestDispatcher("/order_type.html");  
+			RequestDispatcher rd=context.getRequestDispatcher("/order_type.jsp");  
 		    rd.forward(request, response);  
 		}
 		

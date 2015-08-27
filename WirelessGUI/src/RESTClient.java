@@ -44,7 +44,7 @@ public class RESTClient {
          }
         }
     
-    public void check(String input){
+    public String check(String input){
     	
     	try {
     		 URL checkUrl = new URL(checkURL);
@@ -75,6 +75,7 @@ public class RESTClient {
              e.printStackTrace();
            } catch (IOException e) {
              e.printStackTrace();
-    	}    	 
+    	}
+		return input;    	 
     }
 }

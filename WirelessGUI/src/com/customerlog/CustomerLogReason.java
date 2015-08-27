@@ -19,7 +19,7 @@ public class CustomerLogReason extends HttpServlet {
     
   
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		try {
 			//System.out.println("inside get of servlet 2");
@@ -27,12 +27,13 @@ public class CustomerLogReason extends HttpServlet {
 			HttpSession session=request.getSession();  
 			String m=(String)session.getAttribute("mail");
 			
+			
 			boolean status=new CustomerDao().CustLog3(m);
 
 			if(status)
 			{	
 				System.out.println("Updated");
-				response.sendRedirect("plans1.jsp");
+				response.sendRedirect("plans.jsp");
 			}
 			else
 				System.out.println("not updated");

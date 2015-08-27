@@ -45,7 +45,7 @@
 
 			<!--logo start-->
 			<a href="index.jsp" class="logo"> <span class="lite"><img
-					alt="" src="img/t15.jpg"></span></a>
+					alt="" src="img/t15.png"></span></a>
 			<!--logo end-->
 			<div class="top-nav notification-row">
 				<!-- user login dropdown start-->
@@ -144,11 +144,11 @@
 										</div></label>
 				</div>
 				<div class="form-group">
-					<div align="right"><button type="submit"value="checkout">
-						<a href="check_form_json"><img src="img/checkout.png"
+					<div align="right">
+						<input type="image"  src="img/checkout.png"
 							onmouseover="this.src='img/checkout.png'"
-							onmouseout="this.src='img/checkoutunclicked.png'" width="200px"
-							height="50px" /></a>
+							onmouseout="this.src='img/checkoutunclicked.png'" width="400px"
+							height="100px" />
 					</div>
 				</div>
 			</form>

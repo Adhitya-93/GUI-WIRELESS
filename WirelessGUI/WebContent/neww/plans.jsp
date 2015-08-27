@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<html>
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="description" content="Twenty Fifteen">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Order Status</title>
+    <title>Plan</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,8 +30,7 @@
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
   </head>
-
-  <body>
+<body>
   <!-- container section start -->
   <section id="container" class="">
       <!--header start-->
@@ -43,16 +41,17 @@
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo"> <span class="lite"><img alt="" src="img/t15.png"></span></a>
+            <a href="index.jsp" class="logo"> <span class="lite"><img alt="" src="img/t15.png"></span></a>
             <!--logo end-->
-            		   <div class="top-nav notification-row">
+            		   <div class="top-nav notification-row"><br>
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username"><% String firstName= session.getAttribute("rep_username").toString();
+     out.println(firstName);%></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -72,46 +71,18 @@
       </header>      
       <!--header end-->
       <!--main content start-->
-          <section class="wrapper"><br>
-		  <div class="row">
+          <section class="wrapper">
+		  <div class="row"><br>
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa fa-bars"></i> Order Status</h3>
+					<h3 class="page-header"><i class="fa fa fa-bars"></i> Plans</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.jsp">Home</a></li>
-						<li><i class="fa fa-square-o"></i>Order Status</li>
+						<li><i class="fa fa-square-o"></i>Plan selection page</li>
 					</ol>
 				</div>
 			</div>
               <!-- page start-->
-              <form class="form-validate form-horizontal " id="register_form" method="" action="index.jsp">
-              	<div class="form-group ">
-              		<label for="custid" class="control-label col-lg-2">Customer ID </label>
-              	</div>
-              	<div class="form-group ">
-              		<label for="orderno" class="control-label col-lg-2">Order Number </label>
-              	</div>
-              	<div class="form-group ">
-              		<label for="ordertype" class="control-label col-lg-2">Order Type </label>
-              	</div>
-              	<div class="form-group ">
-              		<label for="plan" class="control-label col-lg-2">Plan Name </label>
-              	</div>    
-              	<div class="form-group ">
-              		<label for="firstname" class="control-label col-lg-2">First name </label>
-              	</div>
-              	<div class="form-group ">
-              		<label for="lastname" class="control-label col-lg-2">Last name </label>
-              	</div>
-              	<div class="form-group ">
-              		<label for="status" class="control-label col-lg-2">Status </label>
-              	</div>
-              	<div class="form-group">
-                	<div align="center">                                             
-                    	<button type="submit" class="btn btn-primary">ok</button>
-                    </div>
-                </div>                
-              </form>
-              
+              Page content goes here
               <!-- page end-->
       </section>
       <!--main content end-->

@@ -57,17 +57,19 @@ public class RegistrationServlet extends HttpServlet {
 		String contact = request.getParameter("contact");
 		Address billingAddr = new Address(bstreet,bzip,bcity,bstate,bcountry);
 		Address connAddr = new Address(cstreet,czip,ccity,cstate,ccountry);
-		Customer new_cust = new Customer("new","", fname, lname, billingAddr, connAddr, email, dob, contact);
+		CustomerDetails cust_det = new CustomerDetails("new", "", fname, lname, billingAddr, connAddr);
+		Customer new_cust = new Customer(cust_det,  email, contact, dob);
 		
 		// convert java object to JSON format,
 		// and return as JSON formatted string
 		String json = gson.toJson(new_cust);		
 		
 		System.out.println(json);
-		RESTClient client = new RESTClient();
-		out.print("Inserting data...\n");
-		client.insert(json);		
+		//RESTClient client = new RESTClient();
+		out.print("Inserting data......");
+		//client.insert(json);		
 		out.print("You are successfully registered...");
+		out.print(json);
 		
 		//TODO Redirect to next page.
 	}		
