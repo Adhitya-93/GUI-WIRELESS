@@ -87,8 +87,12 @@
 			</div>
 			<!-- page start-->
 			<div align="center">
-				<a href="CustomerLogReason" ><img src="img/createunclicked.png" onmouseover="this.src='img/create.png'" onmouseout="this.src='img/createunclicked.png'" width="250px" vspace="50" hspace="40"/></a>
-				<a href="CustomerLogReason2" ><img src="img/checkunclicked.png" onmouseover="this.src='img/check.png'" onmouseout="this.src='img/checkunclicked.png'"width="250px"vspace="50" hspace="40"/></a>
+				<form name="neworder" method="post" action="CustomerLogReason">
+				<input type="image" src="img/createunclicked.png" onmouseover="this.src='img/create.png'" onmouseout="this.src='img/createunclicked.png'" width="250px" vspace="50" hspace="40"/>
+				</form>
+				<form name=orderstatus method="post" action="CustomerLogReason2">
+				<input type="image" src="img/checkunclicked.png" onmouseover="this.src='img/check.png'" onmouseout="this.src='img/checkunclicked.png'"width="250px"vspace="50" hspace="40"/>
+				</form>
 			</div>
 			<!-- page end-->
 

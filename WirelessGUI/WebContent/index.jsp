@@ -42,12 +42,16 @@
 <link href="css/style-responsive.css" rel="stylesheet" />
 <link href="css/xcharts.min.css" rel=" stylesheet">
 <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
+<script src="emailvalidate.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -70,8 +74,7 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/avatar1_small.jpg">
                             </span>
-                            <span class="username"><% String firstName= session.getAttribute("rep_username").toString();
-     out.println(firstName);%></span>
+                            <span class="username">></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -112,78 +115,78 @@
                               Validation Credentials
                           </header>
                           <div class="panel-body" >
-                              <center> <form class="form-inline" action="CustomerLogEmail" method="post">
+                              <center> <form class="form-inline" name="validatecustomer" method="post" action="CustomerLogEmail">
                                   <div class="form-group">
-                                      <label class="sr-only" for="Email">Email address</label>
+                                      <label class="sr-only">Email address</label>
                                       <input type="email" class="form-control" id="email" placeholder="Enter email" name="mail">
                                       <br>
                                       <label class="col-lg-12"><style:center>or</style:center></label>
                                   </div>
                                   <br>
                                   <div class="form-group">
-                                      <label class="sr-only" for="CustomerID">Customer ID</label>
-                                      <input type="text" class="form-control" id="cust_id" placeholder="Enter Customer ID"><br>
+                                      <label class="sr-only">Customer ID</label>
+                                      <input type="text" class="form-control" id="cust_id" placeholder="Enter Customer ID" name="custID"><br>
                                   </div><br>
                                   <div class="form-group">
                                   <br><br><br>
-                                      <label class="sr-only" for="Location">Location</label>
+                                      <label class="sr-only">Location</label>
                                       
                                       <select class="form-control m-bot15" id="location" name="location">
     <option value="select">--Select--</option>                                  
-	<option value="AL">Alabama</option>
-	<option value="AK">Alaska</option>
-	<option value="AZ">Arizona</option>
-	<option value="AR">Arkansas</option>
-	<option value="CA">California</option>
-	<option value="CO">Colorado</option>
-	<option value="CT">Connecticut</option>
-	<option value="DE">Delaware</option>
-	<option value="DC">District Of Columbia</option>
-	<option value="FL">Florida</option>
-	<option value="GA">Georgia</option>
-	<option value="HI">Hawaii</option>
-	<option value="ID">Idaho</option>
-	<option value="IL">Illinois</option>
-	<option value="IN">Indiana</option>
-	<option value="IA">Iowa</option>
-	<option value="KS">Kansas</option>
-	<option value="KY">Kentucky</option>
-	<option value="LA">Louisiana</option>
-	<option value="ME">Maine</option>
-	<option value="MD">Maryland</option>
-	<option value="MA">Massachusetts</option>
-	<option value="MI">Michigan</option>
-	<option value="MN">Minnesota</option>
-	<option value="MS">Mississippi</option>
-	<option value="MO">Missouri</option>
-	<option value="MT">Montana</option>
-	<option value="NE">Nebraska</option>
-	<option value="NV">Nevada</option>
-	<option value="NH">New Hampshire</option>
-	<option value="NJ">New Jersey</option>
-	<option value="NM">New Mexico</option>
-	<option value="NY">New York</option>
-	<option value="NC">North Carolina</option>
-	<option value="ND">North Dakota</option>
-	<option value="OH">Ohio</option>
-	<option value="OK">Oklahoma</option>
-	<option value="OR">Oregon</option>
-	<option value="PA">Pennsylvania</option>
-	<option value="RI">Rhode Island</option>
-	<option value="SC">South Carolina</option>
-	<option value="SD">South Dakota</option>
-	<option value="TN">Tennessee</option>
-	<option value="TX">Texas</option>
-	<option value="UT">Utah</option>
-	<option value="VT">Vermont</option>
-	<option value="VA">Virginia</option>
-	<option value="WA">Washington</option>
-	<option value="WV">West Virginia</option>
-	<option value="WI">Wisconsin</option>
-	<option value="WY">Wyoming</option>
+	<option value="Alabama">Alabama</option>
+	<option value="Alaska">Alaska</option>
+	<option value="Arizona">Arizona</option>
+	<option value="Arkansas">Arkansas</option>
+	<option value="California">California</option>
+	<option value="Colorado">Colorado</option>
+	<option value="Connecticut">Connecticut</option>
+	<option value="Delaware">Delaware</option>
+	<option value="District Of Columbia">District Of Columbia</option>
+	<option value="Florida">Florida</option>
+	<option value="Georgia">Georgia</option>
+	<option value="Hawaii">Hawaii</option>
+	<option value="Idaho">Idaho</option>
+	<option value="Illinois">Illinois</option>
+	<option value="Indiana">Indiana</option>
+	<option value="Iowa">Iowa</option>
+	<option value="Kansas">Kansas</option>
+	<option value="Kentucky">Kentucky</option>
+	<option value="Louisiana">Louisiana</option>
+	<option value="Maine">Maine</option>
+	<option value="Maryland">Maryland</option>
+	<option value="Massachusetts">Massachusetts</option>
+	<option value="Michigan">Michigan</option>
+	<option value="Minnesota">Minnesota</option>
+	<option value="Mississippi">Mississippi</option>
+	<option value="Missouri">Missouri</option>
+	<option value="Montana">Montana</option>
+	<option value="Nebraska">Nebraska</option>
+	<option value="Nevada">Nevada</option>
+	<option value="New Hampshire">New Hampshire</option>
+	<option value="New Jersey">New Jersey</option>
+	<option value="New Mexico">New Mexico</option>
+	<option value="New York">New York</option>
+	<option value="North Carolina">North Carolina</option>
+	<option value="North Dakota">North Dakota</option>
+	<option value="Ohio">Ohio</option>
+	<option value="Oklahoma">Oklahoma</option>
+	<option value="Oregon">Oregon</option>
+	<option value="Pennsylvania">Pennsylvania</option>
+	<option value="Rhode Island">Rhode Island</option>
+	<option value="South Carolina">South Carolina</option>
+	<option value="South Dakota">South Dakota</option>
+	<option value="Tennessee">Tennessee</option>
+	<option value="Texas">Texas</option>
+	<option value="Utah">Utah</option>
+	<option value="Vermont">Vermont</option>
+	<option value="Virginia">Virginia</option>
+	<option value="Washington">Washington</option>
+	<option value="West Virginia">West Virginia</option>
+	<option value="Wisconsin">Wisconsin</option>
+	<option value="Wyoming">Wyoming</option>
 </select>
                                   </div><div><br>
-                                  <button type="submit" class="btn btn-primary">Next</button></div>
+                                  <input type="submit" class="btn btn-primary"></div>
                               </form></center>
                           </div>
                       </section>
@@ -210,7 +213,6 @@
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
 	<script src="js/jquery-ui-1.10.4.min.js"></script>
-    <script src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
     <!-- bootstrap -->
     <script src="js/bootstrap.min.js"></script>
@@ -246,54 +248,9 @@
 	<script src="js/sparklines.js"></script>	
 	<script src="js/charts.js"></script>
 	<script src="js/jquery.slimscroll.min.js"></script>
-  <script>
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw' : function () { 
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
-
-      //carousel
-      $(document).ready(function() {
-          $("#owl-slider").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true
-
-          });
-      });
-
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-	  
-	  /* ---------- Map ---------- */
-	$(function(){
-	  $('#map').vectorMap({
-	    map: 'world_mill_en',
-	    series: {
-	      regions: [{
-	        values: gdpData,
-	        scale: ['#000', '#000'],
-	        normalizeFunction: 'polynomial'
-	      }]
-	    },
-		backgroundColor: '#eef3f7',
-	    onLabelShow: function(e, el, code){
-	      el.html(el.html()+' (GDP - '+gdpData[code]+')');
-	    }
-	  });
-	});
-
-
-
-  </script>
-
+	<script>
+	localStorage.setItem('email', document.getElementById("email").value);
+	</script>
+</b> Time(s).</p>
   </body>
 </html>

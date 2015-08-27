@@ -20,7 +20,7 @@ public class CustomerLogReason2 extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		try {
 			System.out.println("inside get of servlet 2");
@@ -33,7 +33,7 @@ public class CustomerLogReason2 extends HttpServlet {
 			if(status)
 				{
 				System.out.println("Updated");
-				response.sendRedirect("plans.jsp");
+				response.sendRedirect("order_status.jsp");
 				}
 			
 			else
