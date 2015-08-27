@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import com.google.gson.Gson;
+import com.json.*;
  
 public class RESTClient {
 
@@ -68,7 +69,7 @@ public class RESTClient {
              while ((output = responseBuffer.readLine()) != null) {
                  System.out.println(output);
              }
-             Customer cust = gson.fromJson(output, Customer.class);
+             CustomerDetails cust = gson.fromJson(output, CustomerDetails.class);
              System.out.println(cust.toString());
              httpConnection.disconnect();
            } catch (MalformedURLException e) {

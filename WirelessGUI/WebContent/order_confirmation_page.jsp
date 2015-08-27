@@ -45,7 +45,7 @@
 
 			<!--logo start-->
 			<a href="index.jsp" class="logo"> <span class="lite"><img
-					alt="" src="img/t15.png"></span></a>
+					alt="" src="img/t15.jpg"></span></a>
 			<!--logo end-->
 			<div class="top-nav notification-row">
 				<!-- user login dropdown start-->
@@ -84,71 +84,98 @@
 			<!-- page start-->
 			<form class="form-validate form-horizontal " id="register_form"
 				method="get" action="RegistrationServlet">
+				
+				<%String cust_id =(String)request.getAttribute("cust_id");
+				if(cust_id=="null"){%><div class="col-lg-10"><input hidden name="cust_id" >
+				<%} else {%>
+				<div class="form-group ">
+					<label for="cust_id" class="control-label col-lg-2">Customer ID </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="cust_id" name="cust_id" ><%=request.getAttribute("cust_id") %></textarea>
+										</div></label><%} %>
+				</div>
+				
 				<div class="form-group ">
 					<label for="ordertype" class="control-label col-lg-2">Order
 						Type </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="order_type" name="order_type" type="text" value= <%= request.getAttribute("order_type") %> readonly/>
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="order_type" name="order_type" ><%=request.getAttribute("order_type") %></textarea>
 										</div></label>
 				</div>
 				<div class="form-group ">
 					<label for="plan" class="control-label col-lg-2">Plan Name
 					</label> <label><div class="col-lg-10">
-											<input class=" form-control" id="plan" name="plan" type="text" value= <%= request.getAttribute("plan") %> readonly/>
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="plan" name="plan" ><%=request.getAttribute("plan") %></textarea>
 										</div></label>
 				</div>
 				<div class="form-group ">
 					<label for="firstname" class="control-label col-lg-2">First
 						name </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="firstname" name="firstname" type="text" value= <%= request.getAttribute("firstname") %> readonly/>
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="firstname" name="firstname" ><%=request.getAttribute("firstname") %></textarea>
 										</div><label>
 				</div>
 				<div class="form-group ">
 					<label for="lastname" class="control-label col-lg-2">Last
 						name </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="lastname" name="lastname" type="text" value= <%= request.getAttribute("lastname") %> readonly/>
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="lastname" name="lastname" ><%=request.getAttribute("lastname") %></textarea>
 										</div><label></label></label>
-				</div>
-				<div class="form-group ">
-					<label for="streetname" class="control-label col-lg-2">Street
-						Name </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="streetname" name="streetname" type="text" value= <%= request.getAttribute("streetname") %> readonly/>
-										</div></label>
-				</div>
-				<div class="form-group ">
-					<label for="zipcode" class="control-label col-lg-2">Zip
-						Code </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="zipcode" name="zipcode" type="text" value= <%= request.getAttribute("zipcode") %> readonly/>
-										</div></label>
-				</div>
-				<div class="form-group ">
-					<label for="city" class="control-label col-lg-2">City </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="city" name="city" type="text" value= <%= request.getAttribute("city") %> readonly/>
-										</div></label>
-				</div>
-				<div class="form-group ">
-					<label for="country" class="control-label col-lg-2">Country</label>
-					<label><div class="col-lg-10">
-											<input class=" form-control" id="country" name="country" type="text" value="United States of America"readonly/>
-										</div></label>
-				</div>
-				<div class="form-group ">
-					<label for="email" class="control-label col-lg-2">Email ID
-					</label> <label><div class="col-lg-10">
-											<input class=" form-control" id="email" name="email" type="text" value= <%= request.getAttribute("email") %> readonly/>
-										</div></label>
 				</div>
 				<div class="form-group ">
 					<label for="dob" class="control-label col-lg-2">Date Of
 						Birth </label> <label><div class="col-lg-10">
-											<input class=" form-control" id="dob" name="dob" type="text" value= <%= request.getAttribute("dob") %> readonly/>
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="dob" name="dob" ><%=request.getAttribute("dob") %></textarea>
 										</div></label>
 				</div>
+				
+				<div class="form-group ">
+					<label for="email" class="control-label col-lg-2">Email ID
+					</label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="email" name="email" ><%=request.getAttribute("email") %></textarea>	
+										</div></label>
+				</div>
+				<div class="form-group ">
+					<label for="contact_number" class="control-label col-lg-2">Contact Number
+					</label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="contact_number" name="contact_number" ><%=request.getAttribute("contact_number") %></textarea>	
+										</div></label>
+				</div> 
+				
+				
+				
+						
+				<div class="form-group ">
+					<label for="bstreetname" class="control-label col-lg-2">Street
+						Name </label> <label><div class="col-lg-10">
+											  <textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstreetname" name="bstreetname" ><%=request.getAttribute("bstreetname") %></textarea>	
+										</div></label>
+				</div>
+				<div class="form-group ">
+					<label for="bcity" class="control-label col-lg-2">City </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bcity" name="bcity" ><%=request.getAttribute("bcity") %></textarea>	
+										</div></label>
+				</div>
+				<div class="form-group ">
+					<label for="bstate" class="control-label col-lg-2">State </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstate" name="bstate" ><%=request.getAttribute("bstate") %></textarea>	
+										</div></label>
+				</div>
+				<div class="form-group ">
+					<label for="bzipcode" class="control-label col-lg-2">Zip
+						Code </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bzipcode" name="bzipcode" ><%=request.getAttribute("bzipcode") %></textarea>	
+										</div></label>
+				</div>
+				
+				<div class="form-group ">
+					<label for="country" class="control-label col-lg-2">Country </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="country" name="country" ><%=request.getAttribute("country") %></textarea>	
+										</div></label>
+				</div>
+				
 				<div class="form-group">
-					<div align="right">
-						<input type="image"  src="img/checkout.png"
+					<div align="right"><button type="submit"value="checkout">
+						<a href="check_form_json"><img src="img/checkout.png"
 							onmouseover="this.src='img/checkout.png'"
-							onmouseout="this.src='img/checkoutunclicked.png'" width="400px"
-							height="100px" />
+							onmouseout="this.src='img/checkoutunclicked.png'" width="200px"
+							height="50px" /></a>
 					</div>
 				</div>
 			</form>

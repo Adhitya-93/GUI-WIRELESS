@@ -46,18 +46,24 @@ HttpSession session;
 		System.out.println(lastname);
 		request.setAttribute("lastname", lastname);
 		
-		String streetname=request.getParameter("streetname");
-		System.out.println(streetname);
-		request.setAttribute("streetname", streetname);
+		String bstreetname=request.getParameter("bstreetname");
+		System.out.println(bstreetname);
+		request.setAttribute("bstreetname", bstreetname);
 		
-		int zipcode=Integer.parseInt(request.getParameter("zipcode"));
-		System.out.println(zipcode);
-		request.setAttribute("zipcode", zipcode);
+		int bzipcode=Integer.parseInt(request.getParameter("bzipcode"));
+		System.out.println(bzipcode);
+		request.setAttribute("bzipcode", bzipcode);
 		
-		String city=request.getParameter("city");
-		System.out.println(city);
-		request.setAttribute("city", city);
-		 
+		String bcity=request.getParameter("bcity");
+		System.out.println(bcity);
+		request.setAttribute("bcity", bcity);
+		
+		String bstate=request.getParameter("bstate");
+		System.out.println(bstate);
+		request.setAttribute("bstate", bstate);
+		
+		
+		
 		String country=request.getParameter("country");
 		System.out.println(country);
 		request.setAttribute("country", country);
@@ -74,14 +80,23 @@ HttpSession session;
 		System.out.println(ssn);
 		request.setAttribute("ssn", ssn);
 		
+		String order_type=request.getParameter("order_type");
+		System.out.println(order_type);
+		request.setAttribute("order_type",order_type);
+		  
+		
 		String plan=request.getParameter("plan");
 		System.out.println(plan);
 		request.setAttribute("plan", plan);
 		
-		String order_type=request.getParameter("order_type");
-		System.out.println(order_type);
-		request.setAttribute("order_type", order_type);
-		  
+		String contact_number=request.getParameter("contact_number");
+		System.out.println(contact_number);
+		request.setAttribute("contact_number", contact_number);
+		
+		String cust_id=request.getParameter("cust_id");
+		System.out.println(cust_id);
+		request.setAttribute("cust_id", cust_id);
+		
 		Connection conn=null;
 		boolean status=new new_cust_ssn_dao().login(ssn);
 		System.out.println(status);

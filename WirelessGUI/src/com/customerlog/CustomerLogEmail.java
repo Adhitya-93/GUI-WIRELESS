@@ -35,8 +35,6 @@ public class CustomerLogEmail extends HttpServlet {
 			System.out.println(mail);
 			String location=request.getParameter("location");
 			
-			String custID=request.getParameter("custID"); 
-			int cID=Integer.parseInt(custID);
 			PrintWriter out= response.getWriter();
 			if (mail== null) 
 		    {
@@ -58,11 +56,6 @@ public class CustomerLogEmail extends HttpServlet {
 		        out.println("<html><body onload=\"alert('GIVE MAIL PROPERLY')\"></body></html>");
 
 		    }
-			else if(cID<=1000000 || cID>=9999999)
-			{
-				response.sendRedirect("index.jsp");
-		        out.println("<html><body onload=\"alert('GIVE customer ID PROPERLY')\"></body></html>");
-			}
 			else if(location.equalsIgnoreCase("select")){
 		        response.sendRedirect("index.jsp");
 		        out.println("<html><body onload=\"alert('GIVE LOCATION')\"></body></html>");

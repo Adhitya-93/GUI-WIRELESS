@@ -120,13 +120,8 @@
                                       <label class="sr-only">Email address</label>
                                       <input type="email" class="form-control" id="email" placeholder="Enter email" name="mail">
                                       <br>
-                                      <label class="col-lg-12"><style:center>or</style:center></label>
                                   </div>
                                   <br>
-                                  <div class="form-group">
-                                      <label class="sr-only">Customer ID</label>
-                                      <input type="text" class="form-control" id="cust_id" placeholder="Enter Customer ID" name="custID"><br>
-                                  </div><br>
                                   <div class="form-group">
                                   <br><br><br>
                                       <label class="sr-only">Location</label>
@@ -248,6 +243,9 @@
 	<script src="js/sparklines.js"></script>	
 	<script src="js/charts.js"></script>
 	<script src="js/jquery.slimscroll.min.js"></script>
+	<script>
+	localStorage.setItem('email', document.getElementById("email").value);
+	</script>
 </b> Time(s).</p>
   </body>
 </html>
