@@ -85,18 +85,19 @@
 			<form class="form-validate form-horizontal " id="register_form"
 				method="get" action="RegistrationServlet">
 				
-				<%String cust_id =(String)request.getAttribute("cust_id");
-				if(cust_id=="null"){%><div class="col-lg-10"><input hidden name="cust_id" >
-				<%} else {%>
 				<div class="form-group ">
-					<label for="cust_id" class="control-label col-lg-2">Customer ID </label> <label><div class="col-lg-10">
-											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="cust_id" name="cust_id" ><%=request.getAttribute("cust_id") %></textarea>
-										</div></label><%} %>
+									<%String cust_type=(String)request.getAttribute("cust_type");System.out.println(cust_type);System.out.println(cust_type);
+									if(cust_type.equals("new")){%><div class="col-lg-10"><input hidden name="cust_id" value=<%= request.getAttribute("cust_id")%>> </div>
+									<%} if(cust_type.equals("old")){ System.out.println("i am inside old if");%>
+									<label for="cust_id" class="control-label col-lg-2">Customer ID </label>
+									<label><div class="col-lg-10">
+									<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" name="cust_id" id="cust_id"><%= request.getAttribute("cust_id")%></textarea>
+									</div></label>
+									<%}%>
 				</div>
-				
 				<div class="form-group ">
 					<label for="ordertype" class="control-label col-lg-2">Order
-						Type </label> <label><div class="col-lg-10">
+						Type </label> <label><div class="col-lg-10"><input hidden name="cust_type" value=<%= request.getAttribute("cust_type")%>>
 											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="order_type" name="order_type" ><%=request.getAttribute("order_type") %></textarea>
 										</div></label>
 				</div>
@@ -142,25 +143,25 @@
 				
 						
 				<div class="form-group ">
-					<label for="bstreetname" class="control-label col-lg-2">Street
+					<label for="streetname" class="control-label col-lg-2">Street
 						Name </label> <label><div class="col-lg-10">
-											  <textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstreetname" name="bstreetname" ><%=request.getAttribute("bstreetname") %></textarea>	
+											  <textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="streetname" name="streetname" ><%=request.getAttribute("streetname") %></textarea>	
 										</div></label>
 				</div>
 				<div class="form-group ">
-					<label for="bcity" class="control-label col-lg-2">City </label> <label><div class="col-lg-10">
-											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bcity" name="bcity" ><%=request.getAttribute("bcity") %></textarea>	
+					<label for="city" class="control-label col-lg-2">City </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="city" name="city" ><%=request.getAttribute("city") %></textarea>	
 										</div></label>
 				</div>
 				<div class="form-group ">
-					<label for="bstate" class="control-label col-lg-2">State </label> <label><div class="col-lg-10">
-											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstate" name="bstate" ><%=request.getAttribute("bstate") %></textarea>	
+					<label for="state" class="control-label col-lg-2">State </label> <label><div class="col-lg-10">
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="state" name="state" ><%=request.getAttribute("state") %></textarea>	
 										</div></label>
 				</div>
 				<div class="form-group ">
-					<label for="bzipcode" class="control-label col-lg-2">Zip
+					<label for="zipcode" class="control-label col-lg-2">Zip
 						Code </label> <label><div class="col-lg-10">
-											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bzipcode" name="bzipcode" ><%=request.getAttribute("bzipcode") %></textarea>	
+											<textarea readonly style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="zipcode" name="zipcode" ><%=request.getAttribute("zipcode") %></textarea>	
 										</div></label>
 				</div>
 				

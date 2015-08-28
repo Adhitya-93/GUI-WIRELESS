@@ -1,13 +1,14 @@
 function validate() {
 	
 	var cust_id=document.registration.cust_id;
+	var cust_type=document.registration.cust_type;
 	
 	var firstname=document.registration.firstname;
 	var lastname=document.registration.lastname;
-	var bstreetname=document.registration.bstreetname;
-	var bzipcode=document.registration.bzipcode;
-	var bcity=document.registration.bcity;
-	var bstate=document.registration.bstate;
+	var streetname=document.registration.streetname;
+	var zipcode=document.registration.zipcode;
+	var city=document.registration.city;
+	var state=document.registration.state;
 	
 	
 	var email=document.registration.email;
@@ -91,40 +92,40 @@ function validate() {
  return false;
 	}
  
-    else if (bstreetname.value == 0) 
+    else if (streetname.value == 0) 
     {
-    	window.alert("Please enter your Billing Street name.");
-        bstreetname.focus();
+    	window.alert("Please enter your Street name.");
+        streetname.focus();
         return false;
     }
-    else if (bcity.value == 0) 
+    else if (city.value == 0) 
     {
-    	window.alert("Please enter your Billing City.");
-        bcity.focus();
+    	window.alert("Please enter your City.");
+        city.focus();
         return false;
     }
-    else if (bstate.value == 0) 
+    else if (state.value == 0) 
     {
-    	window.alert("Please enter your Billing State.");
-        bstate.focus();
+    	window.alert("Please enter your State.");
+        state.focus();
         return false;
     }
-    else if (bzipcode.value == 0) 
+    else if (zipcode.value == 0) 
     {
-    	window.alert("Please enter your Billing Zipcode.");
-        bzipcode.focus();
+    	window.alert("Please enter your Zipcode.");
+        zipcode.focus();
         return false;
     }
-    else if(!bzipcode.value.match(number))
+    else if(!zipcode.value.match(number))
     	{
-    	window.alert("Please enter Valid Billing Zipcode.");
-        bzipcode.focus();
+    	window.alert("Please enter Valid  Zipcode.");
+        zipcode.focus();
         return false;
     	}
-    else if(bzipcode.value.length!=5)
+    else if(zipcode.value.length!=5)
 	{
-	window.alert("Please enter 5 digit Billing Zipcode number.");
-	bzipcode.focus();
+	window.alert("Please enter 5 digit Zipcode number.");
+	zipcode.focus();
     return false;
 	}
      
@@ -154,9 +155,10 @@ function validate() {
     else {
  
         document.location.href="new_cust_ssn?ssn="+ssn.value+"&&firstname="+firstname.value+"&&lastname="+lastname.value+
-                                "&&bstreetname="+bstreetname.value+"&&bzipcode="+bzipcode.value+"&&bcity="+bcity.value+"&&bstate="+bstate.value+
+                                "&&streetname="+streetname.value+"&&zipcode="+zipcode.value+"&&city="+city.value+"&&state="+state.value+
                                 "&&country=United States Of America &&email="+email.value+"&&dob="+dob.value+"&&ssn="+ssn.value+
-                                "&&plan="+plan.value+"&&order_type="+order_type.value+"&&contact_number="+contact_number.value+"&&cust_id="+cust_id.value; 
+                                "&&plan="+plan.value+"&&order_type="+order_type.value+"&&contact_number="+contact_number.value+
+                                "&&cust_id="+cust_id.value+"&&cust_type="+cust_type.value; 
 //alert("SUCCESS")
     }
 }

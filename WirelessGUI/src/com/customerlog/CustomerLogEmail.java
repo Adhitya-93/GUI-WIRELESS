@@ -38,9 +38,13 @@ public class CustomerLogEmail extends HttpServlet {
 			PrintWriter out= response.getWriter();
 			if (mail== null) 
 		    {
-		    	response.sendRedirect("index.jsp");
-		    	 out.println("<html><body onload=\"alert('EMAIL SHOULD NOT BE EMPTY')\"></body></html>");
-
+//
+//				response.sendRedirect("index.jsp");
+//		        out.println("<html><body onload=\"alert('GIVE MAIL PROPERLY')\"></body></html>");
+				   out.println("<script type=\"text/javascript\">");
+				   out.println("alert('User or password incorrect');");
+				   out.println("location='index.jsp';");
+				   out.println("</script>");
 		    }
 			
 			else if (mail.indexOf("@", 0) < 0)

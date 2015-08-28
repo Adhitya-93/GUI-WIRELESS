@@ -30,13 +30,7 @@ HttpSession session;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
-		
-		
-		
-		System.out.println("I AM IN SERVLET ");
-	
-		
+		PrintWriter out=response.getWriter();	
 		
 		String firstname=request.getParameter("firstname");
 		System.out.println(firstname);
@@ -46,23 +40,21 @@ HttpSession session;
 		System.out.println(lastname);
 		request.setAttribute("lastname", lastname);
 		
-		String bstreetname=request.getParameter("bstreetname");
-		System.out.println(bstreetname);
-		request.setAttribute("bstreetname", bstreetname);
+		String streetname=request.getParameter("streetname");
+		System.out.println(streetname);
+		request.setAttribute("streetname", streetname);
 		
-		int bzipcode=Integer.parseInt(request.getParameter("bzipcode"));
-		System.out.println(bzipcode);
-		request.setAttribute("bzipcode", bzipcode);
+		int zipcode=Integer.parseInt(request.getParameter("zipcode"));
+		System.out.println(zipcode);
+		request.setAttribute("zipcode", zipcode);
 		
-		String bcity=request.getParameter("bcity");
-		System.out.println(bcity);
-		request.setAttribute("bcity", bcity);
+		String city=request.getParameter("city");
+		System.out.println(city);
+		request.setAttribute("city", city);
 		
-		String bstate=request.getParameter("bstate");
-		System.out.println(bstate);
-		request.setAttribute("bstate", bstate);
-		
-		
+		String state=request.getParameter("state");
+		System.out.println(state);
+		request.setAttribute("state", state);
 		
 		String country=request.getParameter("country");
 		System.out.println(country);
@@ -96,6 +88,10 @@ HttpSession session;
 		String cust_id=request.getParameter("cust_id");
 		System.out.println(cust_id);
 		request.setAttribute("cust_id", cust_id);
+		
+		String cust_type=request.getParameter("cust_type");
+		System.out.println(cust_type);
+		request.setAttribute("cust_type", cust_type);
 		
 		Connection conn=null;
 		boolean status=new new_cust_ssn_dao().login(ssn);

@@ -93,7 +93,8 @@
 									
 									<div class="form-group ">
 									<%String cust_type=(String)request.getAttribute("cust_type");
-									if (cust_type=="new") {%><div class="col-lg-10"><input hidden name="cust_id" value=<%= request.getAttribute("cust_id")%>><%} else {%>
+					
+									if (cust_type.equals("new")) {%><div class="col-lg-10"><input hidden name="cust_id" value=<%= request.getAttribute("cust_id")%>><%} else {%>
 									
 									
 									
@@ -108,7 +109,7 @@
 									
 									<div class="form-group ">
 										<label for="firstname" class="control-label col-lg-2">First
-											name <span class="required">*</span>
+											name <span class="required">*</span><input hidden name="cust_type" value=<%= request.getAttribute("cust_type")%>>
 										</label>
 										<div class="col-lg-10">
 										<%String firstname = (String)request.getAttribute("firstname"); 
@@ -209,54 +210,54 @@
 										
 										
 									<div class="form-group ">
-										<label for="bstreetname" class="control-label col-lg-2">Street
+										<label for="streetname" class="control-label col-lg-2">Street
 											name <span class="required">*</span>
 										</label>
 										<div class="col-lg-10">
-										<%String bstreetname = (String)request.getAttribute("bstreetname"); 
-												if(bstreetname==null){
+										<%String streetname = (String)request.getAttribute("streetname"); 
+												if(streetname==null){
 												%>
 							
-											<input class=" form-control" id="bstreetname" name="bstreetname"
+											<input class=" form-control" id="streetname" name="streetname"
 												type="text" />
 												<%} else { %>
 												
-                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstreetname" name="bstreetname" ><%=request.getAttribute("bstreetname") %></textarea>					
+                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="streetname" name="streetname" ><%=request.getAttribute("streetname") %></textarea>					
 												<%} %>
 										</div>							
 										</div>
 									<div class="form-group ">
-										<label for="bcity" class="control-label col-lg-2">City
+										<label for="city" class="control-label col-lg-2">City
 											<span class="required">*</span>
 										</label>
 										<div class="col-lg-10">
-										<%String bcity = (String)request.getAttribute("bcity"); 
-												if(bcity==null){
+										<%String city = (String)request.getAttribute("city"); 
+												if(city==null){
 												%>
 							
-											<input class=" form-control" id="ccity" name="bcity"
+											<input class=" form-control" id="city" name="city"
 												type="text" />
 												<%} else { %>
 												
-                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bcity" name="bcity" ><%=request.getAttribute("bcity") %></textarea>					
+                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="city" name="city" ><%=request.getAttribute("city") %></textarea>					
 												<%} %>
 										</div>
 									</div>
 									
 									<div class="form-group ">
-										<label for="bstate" class="control-label col-lg-2">State
+										<label for="state" class="control-label col-lg-2">State
 											<span class="required">*</span>
 										</label>
 										<div class="col-lg-10">
-										<%String bstate = (String)request.getAttribute("bstate"); 
-												if(bstate==null){
+										<%String state = (String)request.getAttribute("state"); 
+												if(state==null){
 												%>
 							
-											<input class=" form-control" id="bstate" name="bstate"
+											<input class=" form-control" id="state" name="state"
 												type="text" />
 												<%} else { %>
 												
-                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bstate" name="bstate" ><%=request.getAttribute("bstate") %></textarea>					
+                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="state" name="state" ><%=request.getAttribute("state") %></textarea>					
 												<%} %>
 										</div>
 									</div>
@@ -264,19 +265,19 @@
 
 									
 									<div class="form-group ">
-										<label for="bzipcode" class="control-label col-lg-2">Zip
+										<label for="zipcode" class="control-label col-lg-2">Zip
 											code <span class="required">*</span>
 										</label>
 										<div class="col-lg-10">
-										<%String bzipcode = (String)request.getAttribute("bzipcode"); 
-												if(bzipcode==null){
+										<%String zipcode = (String)request.getAttribute("zipcode"); 
+												if(zipcode==null){
 												%>
 							
-											<input class=" form-control" id="bzipcode" name="bzipcode"
+											<input class=" form-control" id="zipcode" name="zipcode"
 												type="text" />
 												<%} else { %>
 												
-                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="bzipcode" name="bzipcode" ><%=request.getAttribute("bzipcode") %></textarea>					
+                                                <textarea style="overflow:hidden;resize:none" class=" form-control" rows="1" cols="100" id="zipcode" name="zipcode" ><%=request.getAttribute("zipcode") %></textarea>					
 												<%} %>
 										</div>	
 									</div>
@@ -328,13 +329,7 @@
 												onclick="validate()">Check</button>
 										</div>
 									</div>
-									<div class="form-group">
-										<div align="right">
-											<a href="plans.html"><img src="img/checkout.png"
-												onmouseover="this.src='img/checkout.png'"
-												onmouseout="this.src='img/checkout.png'" width="300px"
-												height="100px" /></a>
-										</div>
+									
 									</div>
 								</form>
 							</div>

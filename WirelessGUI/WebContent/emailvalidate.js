@@ -26,6 +26,7 @@ function emailvalidate(){
     }
     else{
   //alert("inside email else validate");
-	document.location.href="CustomerLogEmail";
+	//document.location.href="CustomerLogEmail";
+    	 document.location.href="CustomerLogEmail?mail="+mail.value+"&&location="+location.value;
     }
 }

@@ -121,18 +121,18 @@
             <form id="planform">
             <%String value=(String)session.getAttribute("location");  %>
             
-     <a href="#step-1" onclick="withequip('<%=value%>',this.name)" id="plan_equip" name="plan_equip">
-            <img src="img/equip.png" onmouseover="this.src='img/equipclick.png'" onmouseout="this.src='img/equip.png'" width="250px" height="110px" hspace="20"/>
+     <a href="#step-1" onclick="withequip('<%=value%>',this.name)" id="plan_equip" name="equipment">
+            <img src="img/equip.png" onmouseover="this.src='img/equipclick.png'" onmouseout="this.src='img/equip.png'" width="250px" height="110px" />
         </a>
         <span class="tab"></span>
-      <a href="#step-2" onclick="individual_plan('<%=value%>',this.name)" id="indi_plan" name="indi_plan">
+      <a href="#step-2" onclick="individual_plan('<%=value%>',this.name)" id="indi_plan" name="data">
             <img src="img/ind.png" onmouseover="this.src='img/indclick.png'" onmouseout="this.src='img/ind.png'" width="250px" height="110px" />
         </a>
         <span class="tab"></span>
-      <a href="#step-3" onclick="group_plan('<%=value%>',this.name)" id="grp_plan" name="grp_plan">
-            <img src="img/group.png" onmouseover="this.src='img/groupclick.png'" onmouseout="this.src='img/group.png'" width="250px" height="110px" hspace="20"/>
+      <a href="#step-3" onclick="group_plan('<%=value%>',this.name)" id="grp_plan" name="familyplan">
+            <img src="img/group.png" onmouseover="this.src='img/groupclick.png'" onmouseout="this.src='img/group.png'" width="250px" height="110px"/>
          </a>
-         </form>
+         </form><br>
          </center>
     <div id="framework">
     <script>

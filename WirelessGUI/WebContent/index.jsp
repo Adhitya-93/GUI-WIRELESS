@@ -1,10 +1,5 @@
 <html lang="en">
-
-<head>
-
-  
-  
-  
+<head>  
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description"
@@ -51,7 +46,6 @@
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
 <script src="emailvalidate.js" type="text/javascript"></script>
-<script src="js/app.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -120,8 +114,10 @@
                                       <label class="sr-only">Email address</label>
                                       <input type="email" class="form-control" id="email" placeholder="Enter email" name="mail">
                                       <br>
+                                      <label class="col-lg-12"><style:center>or</style:center></label>
                                   </div>
                                   <br>
+                                 
                                   <div class="form-group">
                                   <br><br><br>
                                       <label class="sr-only">Location</label>
@@ -181,7 +177,7 @@
 	<option value="Wyoming">Wyoming</option>
 </select>
                                   </div><div><br>
-                                  <input type="submit" class="btn btn-primary"></div>
+                                  <input type="submit" class="btn btn-primary" ></div>
                               </form></center>
                           </div>
                       </section>
@@ -242,10 +238,7 @@
 	<script src="js/morris.min.js"></script>
 	<script src="js/sparklines.js"></script>	
 	<script src="js/charts.js"></script>
-	<script src="js/jquery.slimscroll.min.js"></script>
-	<script>
-	localStorage.setItem('email', document.getElementById("email").value);
-	</script>
+	<script src="js/jquery.slimscroll.min.js"></script>	
 </b> Time(s).</p>
   </body>
 </html>
