@@ -1,6 +1,4 @@
-/**
- * 
- */$(document).ready(function(){
+$(document).ready(function(){
 
 //get the form data and then serialize that
 //dataString = $("#someform").serialize();
@@ -21,25 +19,18 @@ $.ajax({
     
     //if received a response from the server
     success: function( data, textStatus, jqXHR) {    	
-    	str = JSON.stringify(data);
-    	alert(str);    	
+    	str = JSON.stringify(data);    	   	
 		var jsonObj = JSON.parse(str);
 		var jsonObj1 = jsonObj.customerdetails;
-		var jsonObj2 = jsonObj1.connectionaddress;
-		document.getElementById("cust_id").value = (jsonObj1.customerid);
+		var jsonObj2 = jsonObj.orderhistory;
+		document.getElementById("custid").value = (jsonObj1.customerid);
 		document.getElementById("firstname").value = (jsonObj1.fname);
 		document.getElementById("lastname").value = (jsonObj1.lname);
-		document.getElementById("city").value = (jsonObj1.email);
-		
-		document.getElementById("bstreetname").value = (jsonObj2.streetname);
-		document.getElementById("bzipcode").value = (jsonObj2.zipcode);
-		document.getElementById("ccity").value = (jsonObj2.city);
-		document.getElementById("bstate").value = (jsonObj2.state);
-		
-		document.getElementById("contact_number").value = (jsonObj1.contactnumber);
-		document.getElementById("dob").value = (jsonObj1.dateofbirth);
-		document.getElementById("firstname").value = reuqest.getParameter("order_name");
-		document.getElementById("firstname").value = reuqest.getParameter("plan_type");
+		document.getElementById("orderno").value = (jsonObj2[0].orderid);
+		document.getElementById("orderdate").value = (jsonObj2[0].dateoforder);
+		document.getElementById("status").value = (jsonObj2[0].orderstatus);
+		document.getElementById("duedate").value = (jsonObj2[0].duedate);
+		document.getElementById("plan").value = (jsonObj2[0].services[0].servicename);
     },
     
     //If there was no response from the server

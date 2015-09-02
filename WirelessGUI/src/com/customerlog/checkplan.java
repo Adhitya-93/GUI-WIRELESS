@@ -30,12 +30,12 @@ public class checkplan extends HttpServlet {
 		String order_name = request.getParameter("order_name");
 		String plan_type = request.getParameter("plan_type");
 		System.out.println(order_name);
-		String cust_type="old";
+		String cust_type="new";
 		
 		response.setContentType("text/html"); 
 		 ServletContext context=getServletContext();
-		 request.setAttribute("plan", plan_type);
-		 request.setAttribute("order_type",order_name);
+		 request.setAttribute("plan"," plan_type");
+		 request.setAttribute("order_type","order_name");
 		 
 		 
 		 if(cust_type=="new")
@@ -48,13 +48,13 @@ public class checkplan extends HttpServlet {
 		 else
 		 {   
 			 request.setAttribute("cust_id","4567");
-			 request.setAttribute("cust_type","Registered");
+			 request.setAttribute("cust_type","registered");
 			 request.setAttribute("firstname","sindu");
 			 request.setAttribute("lastname","balaji");
-			 request.setAttribute("bstreetname","Alex Avenue");
-			 request.setAttribute("bzipcode","23456");
-			 request.setAttribute("bcity","Los Angeles");
-			 request.setAttribute("bstate","California");
+			 request.setAttribute("streetname","Alex Avenue");
+			 request.setAttribute("zipcode","23456");
+			 request.setAttribute("city","Los Angeles");
+			 request.setAttribute("state","California");
 			 
 			 
 			 

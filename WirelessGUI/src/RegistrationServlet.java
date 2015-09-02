@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,18 +46,25 @@ public class RegistrationServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();  
 		Gson gson = new Gson();
 		int cust_id = 0;
+		String cust_type;
 		if(request.getParameter("cust_id") == null)
+		{
 			cust_id = 0;
+			cust_type = "new";
+		}
+		else
+			cust_type = "registered";
+		
 		Date date = new Date();
 		DateFormat inFormat = new SimpleDateFormat("yyyy-mm-dd");
 		DateFormat outFormat = new SimpleDateFormat("dd-MMM-yyyy");
-		//int cust_id = Integer.parseInt(request.getParameter("cust_id"));  
+		cust_id = Integer.parseInt(request.getParameter("cust_id"));  
 		String fname = request.getParameter("firstname");  
 		String lname = request.getParameter("lastname");  
-		String street = request.getParameter("bstreetname");
-		int zip = Integer.parseInt(request.getParameter("bzipcode"));		
-		String city = request.getParameter("bcity");		
-		String state = request.getParameter("bstate");
+		String street = request.getParameter("streetname");
+		int zip = Integer.parseInt(request.getParameter("zipcode"));		
+		String city = request.getParameter("city");		
+		String state = request.getParameter("state");
 		String country = request.getParameter("country");			
 
 		//TODO Write code for proper State ID		
@@ -78,7 +86,7 @@ public class RegistrationServlet extends HttpServlet {
 		
 		Address billingAddr = new Address(street, zip, city,state, stateid, country);
 		Address connAddr = new Address(street, zip, city, state, stateid, country);
-		CustomerDetails customerdetails = new CustomerDetails("new", cust_id, fname, lname, billingAddr, connAddr, email, contact, outFormat.format(dob));
+		CustomerDetails customerdetails = new CustomerDetails(cust_type, cust_id, fname, lname, billingAddr, connAddr, email, contact, outFormat.format(dob));
 		
 		Quantity qty = new Quantity(1,1);		
 		Services services = new Services("b2003","pi_vi_250_250_225",qty);
@@ -92,13 +100,12 @@ public class RegistrationServlet extends HttpServlet {
 		String json = gson.toJson(orderJson);		
 		
 		System.out.println(json);
-		RESTClient client = new RESTClient();
+		RESTClient client = new RESTClient();	
 		
-		out.print("Inserting data......");
 		client.insert(json);		
-		out.print("You are successfully registered...");
-		
 		
 		//TODO Redirect to order summary page.
+		 RequestDispatcher rd = request.getRequestDispatcher("order_summary.jsp");
+		 rd.forward(request, response);
 	}		
 }

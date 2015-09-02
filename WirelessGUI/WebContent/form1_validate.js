@@ -122,9 +122,9 @@ function validate() {
         zipcode.focus();
         return false;
     	}
-    else if(zipcode.value.length!=5)
+    else if(zipcode.value.length!=6)
 	{
-	window.alert("Please enter 5 digit Zipcode number.");
+	window.alert("Please enter 6 digit Zipcode number.");
 	zipcode.focus();
     return false;
 	}

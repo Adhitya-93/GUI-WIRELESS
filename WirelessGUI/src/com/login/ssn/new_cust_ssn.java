@@ -29,6 +29,13 @@ public class new_cust_ssn extends HttpServlet
 HttpSession session; 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		doPost(request, response);
+		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+	
+		
+
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();	
 		
@@ -112,6 +119,6 @@ HttpSession session;
 			RequestDispatcher rd=context.getRequestDispatcher("/order_type.jsp");  
 		    rd.forward(request, response);  
 		}
-		
-		}
+	}
+	
 }

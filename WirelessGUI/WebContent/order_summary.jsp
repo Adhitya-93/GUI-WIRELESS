@@ -10,7 +10,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Order Status</title>
+    <title>Order Summary</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -78,10 +78,10 @@
           <section class="wrapper"><br>
 		  <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa fa-bars"></i> Order Status</h3>
+					<h3 class="page-header"><i class="fa fa fa-bars"></i> Order Summary</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="index.jsp">Home</a></li>
-						<li><i class="fa fa-square-o"></i>Order Status</li>
+						<li><i class="fa fa-square-o"></i>Order Summary</li>
 					</ol>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
               	</div>
               	<div class="form-group">
                 	<div align="center">                                             
-                    	<button type="submit" class="btn btn-primary">BACK</button>
+                    	<button type="submit" class="btn btn-primary">OK</button>
                     </div>
                 </div>                
               </form>

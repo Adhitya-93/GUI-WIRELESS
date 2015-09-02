@@ -19,11 +19,12 @@ $.ajax({
     
     //if received a response from the server
     success: function( data, textStatus, jqXHR) {    	
-    	str = JSON.stringify(data);    	   	
+    	str = JSON.stringify(data);    	
 		var jsonObj = JSON.parse(str);
 		var jsonObj1 = jsonObj.customerdetails;
 		var jsonObj2 = jsonObj1.connectionaddress;
 		document.getElementById("cust_id").value = (jsonObj1.customerid);
+		
 		document.getElementById("firstname").value = (jsonObj1.fname);
 		document.getElementById("lastname").value = (jsonObj1.lname);
 		document.getElementById("email").value = (jsonObj1.email);
