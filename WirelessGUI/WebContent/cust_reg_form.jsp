@@ -49,8 +49,7 @@
 				<li class="dropdown"><a data-toggle="dropdown"
 					class="dropdown-toggle" href="#"> <span class="profile-ava">
 							<img alt="" src="img/avatar1_small.jpg">
-					</span> <span class="username"><% String firstName= session.getAttribute("rep_username").toString();
-     out.println(firstName);%></span> <b class="caret"></b>
+					</span> <span class="username"></span> <b class="caret"></b>
 				</a>
 					<ul class="dropdown-menu extended logout">
 						<div class="log-arrow-up"></div>
